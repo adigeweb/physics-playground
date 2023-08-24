@@ -1,0 +1,301 @@
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: lightblue;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.main *:not(.right) {
+    border-radius: 4px;
+}
+
+.scene {
+    height: 75vh;
+    width: 70vw;
+    background: darkslateblue;
+    position: relative;
+}
+
+.inspector, .create {
+    height: 35vh;
+    width: 20vw;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+.control {
+    height: 10vh;
+    width: calc(90vw + 2rem);
+    background: transparent;
+    display: flex;
+    gap: 2rem;
+    justify-content: flex-end;
+}
+
+.control button {
+    height: 7.5vh;
+    width: 15vw;
+    border: none;
+    transition: 0.2s;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.control button.start {
+    background: limegreen;
+}
+
+.control button.start:hover {
+    background: #00FF00;
+}
+
+.control button.pause {
+    background: orange;
+}
+
+.control button.pause:hover {
+    background: rgb(255, 225, 0);
+}
+
+.control button.stop {
+    background: crimson;
+}
+
+.control button.stop:hover {
+    background: red;
+}
+
+.control button.download {
+    background: dodgerblue;
+}
+
+.control button.download:hover {
+    background: blue;
+}
+
+.control button.upload {
+    background: violet;
+}
+
+.control button.upload:hover {
+    background: purple;
+}
+
+button i.fa {
+    margin-left: .3rem;
+}
+
+.create {
+    flex-direction: column;
+}
+
+.create button.spawner {
+    height: 15%;
+    width: 80%;
+    margin: 1rem;
+    background: skyblue;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.create button.spawner:hover {
+    background: dodgerblue;
+}
+
+.scene .object {
+    height: 2rem;
+    width: 2rem;
+    background: red;
+    border-radius: 0;
+    position: absolute;
+    left: 75px;
+    top: 75px;
+}
+
+.scene .ground {
+    height: 15%;
+    width: 100%;
+    background: black;
+    position: absolute;
+    bottom: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.object[focus] {
+    border: 2px solid skyblue;
+}
+
+.inspector span.empty {
+    color: gray;
+}
+
+.inspector:not([empty]) span.empty {
+    display: none;
+}
+
+.inspector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.inspector .details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.inspector[empty] .details {
+    display: none;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+}
+
+input[type=text] {
+    height: 1rem;
+    width: 90%;
+    border: 2px solid gray;
+    border-radius: 4px;
+}
+
+input[type=color] {
+    height: 1.75rem;
+    width: 1.75rem;
+    border: none;
+    background: transparent;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+input[type=color]::-webkit-color-swatch {
+    border-radius: 4px;
+}
+
+input[type=color]::-moz-color-swatch {
+    border-radius: 4px;
+}
+
+input[type=checkbox] {
+    width: 2.5rem;
+    height: 1rem;
+    border-radius: 4px;
+    appearance: none;
+    background: lightgray;
+    position: relative;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+input[type=checkbox]::after {
+    height: 1.5rem;
+    width: 1.5rem;
+    content: "";
+    position: absolute;
+    left: -.75rem;
+    top: -.3rem;
+    border-radius: 50%;
+    background: red;
+    transition: .2s;
+}
+
+input[type=checkbox]:checked::after {
+    background: limegreen;
+    left: 1.75rem;
+}
+
+*:focus {
+    outline: none;
+}
+
+.menu {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    position: fixed;
+    color: white;
+    background: black;
+    padding: .5rem;
+    position: fixed;
+}
+
+.menu span {
+    padding: .5rem;
+    transition: .1s;
+    cursor: pointer;
+}
+
+.menu span:hover {
+    background: darkslategray;
+}
+
+.details button#delete {
+    color: white;
+    background: crimson;
+    height: 2rem;
+    width: 100%;
+    border: 2px solid white;
+    transition: .2s;
+    margin-top: 2rem;
+}
+
+.details button#delete:hover {
+    background: red;
+}
+
+select {
+    height: 2rem;
+    width: auto;
+    border: 2px solid gray;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.formcont label {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+input[type=number] {
+    height: 2rem;
+    width: 2rem;
+    border: 2px solid gray;
+    border-radius: 4px;
+    text-align: center;
+}

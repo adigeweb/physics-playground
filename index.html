@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Physics Playground</title>
+    </head>
+    <body>
+        <div class="main">
+            <div class="scene">
+                <div class="ground"></div>
+            </div>
+            <div class="right">
+                <div class="inspector" empty>
+                    <span class="empty">Click an object to inspect 😎</span>
+                    <div class="details">
+                        <input id="name" type="text" />
+                        <label for="color">Color <input id="color" type="color" /></label>
+                        <label for="gravity">Gravity <input id="gravity" type="checkbox" /></label>
+                        <label for="collision">Collision <input id="collision" type="checkbox" /></label>
+                        <button id="delete">Delete</button>
+                    </div>
+                </div>
+                <div class="create">
+                    <button class="spawner obj">Add Object <i class="fa fa-plus"></i></button>
+                    <button class="spawner wind">Set Winds <i class="fa fa-wind"></i></button>
+                </div>
+            </div>
+            <div class="control">
+                <button class="upload">Upload <i class="fa fa-upload"></i></button>
+                <button class="download">Download <i class="fa fa-download"></i></button>
+                <button class="start">Start <i class="fa fa-play"></i></button>
+                <button class="pause">Pause <i class="fa fa-pause"></i></button>
+                <button class="stop">Stop <i class="fa fa-stop"></i></button>
+            </div>
+            <div class="menu default">
+                <span id="add">
+                    <i class="fa fa-plus"></i> Add Object
+                </span>
+                <span id="ref">
+                    <i class="fa fa-refresh"></i> Refresh
+                </span>
+                <span id="faq">
+                    <i class="fa fa-question"></i> Learn More
+                </span>
+            </div>
+            <div class="menu item">
+                <span id="del">
+                    <i class="fa fa-trash"></i> Delete
+                </span>
+            </div>
+        </div>
+    </body>
+</html>
+<script src="script.js"></script>
+<script src="https://kit.fontawesome.com/d5360bfebf.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
